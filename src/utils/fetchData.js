@@ -1,9 +1,7 @@
-const BASE_URL = 'https://exercisedb.p.rapidapi.com/exercises/bodyPartList';
+const API_BASE_URL = 'https://exercisedb.p.rapidapi.com';
 
-
-export const options = {
+const options = {
   method: 'GET',
-  url: BASE_URL,
   headers: {
     'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
     'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
@@ -11,8 +9,8 @@ export const options = {
 };
 
 
-export const fetchData = async(url, options) => {
-    const response = await fetch(url, options);
+export const fetchData = async(url) => {
+    const response = await fetch(`${API_BASE_URL}/${url}`, options);
     const data = await response.json();
     return data;
 }
