@@ -6,3 +6,4 @@ export {default as Exercises} from './Exercises';
 export {default as HorizontalScrollbar} from './HorizontalScrollbar';
 export {default as BodyPart} from './BodyPart';
 export {default as ExerciseCard} from './ExerciseCard';
+export {default as Loader} from './Loader';
