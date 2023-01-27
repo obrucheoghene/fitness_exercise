@@ -1,10 +1,9 @@
-const API_BASE_URL = 'https://exercisedb.p.rapidapi.com';
+const API_BASE_URL = 'https://zylalabs.com/api/392/exercise+database+api';
 
 const options = {
   method: 'GET',
   headers: {
-    'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
-    'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
+    'Authorization': process.env.REACT_APP_ZYLA_AUTH_KEY,
   }
 };
 
