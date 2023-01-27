@@ -13,13 +13,11 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
   useEffect(() => {
     const fetchExercisesData = async () => {
       let exercisesData = [];
-
       if (bodyPart === 'all') {
-        exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises');
+        exercisesData = await fetchData('313/list+of+all+exercise');
       } else {
-        exercisesData = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`);
+        exercisesData = await fetchData(`310/list+exercise+by+body+part?bodypart=${bodyPart}`);
       }
-
       setExercises(exercisesData);
     };
 

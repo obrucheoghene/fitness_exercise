@@ -10,7 +10,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
 
   useEffect(() => {
     const fetchExercisesData = async () => {
-      const bodyPartsData = await fetchData('exercises/bodyPartList');
+      const bodyPartsData = await fetchData('309/list+of+body+parts');
 
       setBodyParts(['all', ...bodyPartsData]);
     };
@@ -20,7 +20,7 @@ const SearchExercises = ({ setExercises, bodyPart, setBodyPart }) => {
 
   const handleSearch = async () => {
     if (search) {
-      const exercisesData = await fetchData('exercises');
+      const exercisesData = await fetchData('313/list+of+all+exercise');
 
       const searchedExercises = exercisesData.filter(
         (item) => item.name.toLowerCase().includes(search)
