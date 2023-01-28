@@ -1,6 +1,7 @@
-const API_BASE_URL = 'https://zylalabs.com/api/392/exercise+database+api';
+export const EXERCISE_BASE_URL = 'https://zylalabs.com/api/392/exercise+database+api';
+export const YOUTUBE_BASE_URL = 'https://youtube-search-results.p.rapidapi.com/youtube-search';
 
-const options = {
+export const exerciseOptions = {
   method: 'GET',
   headers: {
     'Authorization': process.env.REACT_APP_ZYLA_AUTH_KEY,
@@ -8,8 +9,16 @@ const options = {
 };
 
 
-export const fetchData = async(url) => {
-    const response = await fetch(`${API_BASE_URL}/${url}`, options);
+export const youtubeOptions = {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': process.env.REACT_APP_RAPID_API_KEY,
+    'X-RapidAPI-Host': 'youtube-search-results.p.rapidapi.com'
+  }
+};
+
+export const fetchData = async(url, options) => {
+    const response = await fetch(url, options);
     const data = await response.json();
     return data;
 }
