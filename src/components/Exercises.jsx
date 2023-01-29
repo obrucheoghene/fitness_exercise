@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Pagination from '@mui/material/Pagination';
 import { Box, Stack, Typography } from '@mui/material';
 
-import {fetchData } from '../utils/fetchData';
+import { fetchData, exerciseOptions, EXERCISE_BASE_URL} from '../utils/fetchData';
 import ExerciseCard from './ExerciseCard';
 import Loader from './Loader';
 
@@ -14,9 +14,10 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
     const fetchExercisesData = async () => {
       let exercisesData = [];
       if (bodyPart === 'all') {
-        exercisesData = await fetchData('313/list+of+all+exercise');
+        exercisesData = await fetchData(`${EXERCISE_BASE_URL}/313/list+of+all+exercise`, exerciseOptions);
       } else {
-        exercisesData = await fetchData(`310/list+exercise+by+body+part?bodypart=${bodyPart}`);
+        exercisesData = await fetchData(`${EXERCISE_BASE_URL}/310/list+exercise+by+body+part?bodypart=${bodyPart}`,
+         exerciseOptions);
       }
       setExercises(exercisesData);
     };
