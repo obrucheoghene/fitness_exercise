@@ -5,9 +5,8 @@ import { Box } from '@mui/material';
 import {fetchData, EXERCISE_BASE_URL, 
   YOUTUBE_BASE_URL, exerciseOptions, 
   youtubeOptions } from '../utils/fetchData';
-import Detail from '../components/Detail';
-import ExerciseVideos from '../components/ExerciseVideos';
-import SimilarExercises from '../components/SimilarExercises';
+import {Detail, ExerciseVideos, SimilarExercises} from '../components';
+
 
 const ExerciseDetail = () => {
   const [exerciseDetail, setExerciseDetail] = useState({});
@@ -25,14 +24,15 @@ const ExerciseDetail = () => {
       const exerciseDetailData = await fetchData(`${EXERCISE_BASE_URL}/1004/exercise+by+id?id=${id}`, exerciseOptions);
       setExerciseDetail(exerciseDetailData);
 
-      const exerciseVideosData = await fetchData(`${YOUTUBE_BASE_URL}/?q=${exerciseDetailData.name}`, youtubeOptions);
+      const exerciseVideosData = await fetchData(`${YOUTUBE_BASE_URL}/search?query=${exerciseDetailData.name}`, youtubeOptions);
       setExerciseVideos(exerciseVideosData.contents);
 
-      const targetMuscleExercisesData = await fetchData(`${EXERCISE_BASE_URL}/exercises/target/${exerciseDetailData.target}`);
+      const targetMuscleExercisesData = await fetchData(`${EXERCISE_BASE_URL}/312/list+by+target+muscle?target=${exerciseDetailData.target}`, exerciseOptions);
       setTargetMuscleExercises(targetMuscleExercisesData);
 
-      const equimentExercisesData = await fetchData(`${EXERCISE_BASE_URL}/exercises/equipment/${exerciseDetailData.equipment}`);
-      setEquipmentExercises(equimentExercisesData);
+      // const equimentExercisesData = await fetchData(`${EXERCISE_BASE_URL}/313/list+of+all+exercise`, exerciseOptions);
+      
+      // setEquipmentExercises(targetMuscleExercisesData);
     };
 
     fetchExercisesData();
