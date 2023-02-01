@@ -5,7 +5,7 @@ The fitness exercise application provides a self training platform to help peopl
 
 It is live on [Fitness_Exercise App](https://fitness-exercise-wc.netlify.app/)
 
-![Fitness_Exercise App](fitness_app.png)
+![Fitness_Exercise App](fitness-app.png)
 
 ## Libraries and Dependencies
 
@@ -43,6 +43,10 @@ It is live on [Fitness_Exercise App](https://fitness-exercise-wc.netlify.app/)
 3. Start the application.
   
     `$ npm start`
+
+**Home Page Full Preview**
+![Fitness_Exercise App](fitness_app.png)
+
 
 **Thank you. Stay fit!**
 
