@@ -3,9 +3,9 @@
 ## About
 The fitness exercise application provides a self training platform to help people keep fit at no cost. It has over  1300 exercises with animated demonstrations as well similar youtube video.  
 
-It is live on [Fitness_Exercise App](https://youtube-wc.netlify.app/)
+It is live on [Fitness_Exercise App](https://fitness-exercise-wc.netlify.app/)
 
-![Fitness_Exercise App](Youtube-Clone.png)
+![Fitness_Exercise App](fitness_app.png)
 
 ## Libraries and Dependencies
 
@@ -44,7 +44,7 @@ It is live on [Fitness_Exercise App](https://youtube-wc.netlify.app/)
   
     `$ npm start`
 
-**Thank you. Enjoy It!**
+**Thank you. Stay fit!**
 
 
 
